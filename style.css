@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  border: 2px solid black;
+  height: 361px;
+  width: 400px;
+  margin: auto;
+  margin-top: 150px;
+  flex-wrap: wrap;
+  background-image: radial-gradient(#636363, #a2ab58);
+}
+
+#output {
+  margin: 20px;
+  width: 352px;
+  height: 50px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 73px;
+  height: 50px;
+}
