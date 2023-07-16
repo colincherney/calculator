@@ -2,6 +2,7 @@ let firstNumber;
 let operator;
 let secondNumber;
 let numbers = [];
+let newOperator;
 
 function number(value) {
   let number = (document.getElementById("output").value += value);
@@ -21,29 +22,63 @@ function number(value) {
     numbers.push(secondNumber);
     let number1 = parseInt(numbers[0]);
     let number2 = parseInt(numbers[2]);
-    operate(number1, numbers[1], number2);
+    operate(number1, numbers[1], number2, false);
+  }
+  if (numbers.length == 4) {
+    secondNumber = number.slice(0, -1);
+    numbers.push(secondNumber);
+    let number1 = parseInt(numbers[0]);
+    let number2 = parseInt(numbers[2]);
+    newOperator = numbers[3];
+    operate(number1, numbers[1], number2, true, newOperator);
   }
 }
 
-function operate(firstNumber, operator, secondNumber) {
+function operate(
+  firstNumber,
+  operator,
+  secondNumber,
+  boolean, // Boolean is set to true if equal sign is not hit and multiple calculations were chained together (ex. 2 * 8 - 2 + 3)
+  newOperator = numbers[1] // Optional parameter to allow you to chain different calculations together
+) {
   if (operator == "+") {
     let answer = firstNumber + secondNumber;
     document.getElementById("output").value = answer;
     numbers.splice(0, numbers.length);
+    if (boolean == true) {
+      numbers.push(answer);
+      numbers.push(newOperator);
+      document.getElementById("output").value = "";
+    }
   }
   if (operator == "-") {
     let answer = firstNumber - secondNumber;
     document.getElementById("output").value = answer;
     numbers.splice(0, numbers.length);
+    if (boolean == true) {
+      numbers.push(answer);
+      numbers.push(newOperator);
+      document.getElementById("output").value = "";
+    }
   }
   if (operator == "x") {
     let answer = firstNumber * secondNumber;
     document.getElementById("output").value = answer;
     numbers.splice(0, numbers.length);
+    if (boolean == true) {
+      numbers.push(answer);
+      numbers.push(newOperator);
+      document.getElementById("output").value = "";
+    }
   }
   if (operator == "/") {
     let answer = firstNumber / secondNumber;
     document.getElementById("output").value = answer;
     numbers.splice(0, numbers.length);
+    if (boolean == true) {
+      numbers.push(answer);
+      numbers.push(newOperator);
+      document.getElementById("output").value = "";
+    }
   }
 }
