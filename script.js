@@ -22,6 +22,7 @@ function number(value) {
     numbers.push(secondNumber);
     let number1 = parseInt(numbers[0]);
     let number2 = parseInt(numbers[2]);
+    document.getElementById("top").value = "";
     operate(number1, numbers[1], number2, false);
   }
   if (numbers.length == 4) {
@@ -49,6 +50,7 @@ function operate(
       numbers.push(answer);
       numbers.push(newOperator);
       document.getElementById("output").value = "";
+      document.getElementById("top").value = answer;
     }
   }
   if (operator == "-") {
@@ -59,6 +61,7 @@ function operate(
       numbers.push(answer);
       numbers.push(newOperator);
       document.getElementById("output").value = "";
+      document.getElementById("top").value = answer;
     }
   }
   if (operator == "x") {
@@ -69,6 +72,7 @@ function operate(
       numbers.push(answer);
       numbers.push(newOperator);
       document.getElementById("output").value = "";
+      document.getElementById("top").value = answer;
     }
   }
   if (operator == "/") {
@@ -79,6 +83,7 @@ function operate(
       numbers.push(answer);
       numbers.push(newOperator);
       document.getElementById("output").value = "";
+      document.getElementById("top").value = answer;
     }
   }
 }

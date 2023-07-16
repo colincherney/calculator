@@ -1,7 +1,13 @@
+body {
+  background-image: url(background.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 .container {
   display: flex;
   border: 2px solid black;
-  height: 361px;
+  height: 376px;
   width: 400px;
   margin: auto;
   margin-top: 150px;
@@ -15,6 +21,21 @@
   width: 352px;
   height: 50px;
   background-color: ivory;
+  margin-top: 0;
+  border-top: 0;
+  text-align: right;
+  font-size: 45px;
+  font-family: "Tektur", cursive;
+}
+
+#top {
+  margin: 20px;
+  width: 352px;
+  background-color: ivory;
+  margin-bottom: 0;
+  border-bottom: 0;
+  text-align: right;
+  font-family: "Tektur", cursive;
 }
 
 .buttons {
